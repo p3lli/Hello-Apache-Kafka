@@ -15,7 +15,7 @@ Because I was listening to the radio while coding, there are two main topics:
 * seventy  
 * eighty  
 
-Messages are read by producers from a CSV file.
+Messages are read by producers from a CSV file.  
 Currently, every message is an insert of music track title.    
 This kind of producer has been created based on the example of [jabbaugh github](https://github.com/jabbaugh/kafka-producer).  
 
