@@ -16,7 +16,7 @@ Because I was listening to the radio while coding, there are two main topics:
 * eighty  
 
 Messages are read by producers from a CSV file.  
-I have provided a test CSV file in the repository.
+I have provided a test CSV file in the repository.  
 Currently, every message is an insert operation of a song title.    
 This kind of producer has been created based on the example of [jabbaugh github](https://github.com/jabbaugh/kafka-producer).  
 
