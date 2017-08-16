@@ -1,6 +1,8 @@
-package it.pelli.samples;
+package it.pelli.samples.application;
 
 import java.io.IOException;
+import it.pelli.samples.producers.Producer;
+import it.pelli.samples.consumers.Consumer;
 
 public class Run {
     public static void main(String[] args) throws IOException {

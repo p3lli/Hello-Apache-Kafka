@@ -1,4 +1,4 @@
-package it.pelli.samples;
+package it.pelli.samples.consumers;
 
 import com.google.common.io.Resources;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
+import it.pelli.samples.utils.Utils;
 
 public class Consumer {
     public static void main(String[] args) throws IOException {

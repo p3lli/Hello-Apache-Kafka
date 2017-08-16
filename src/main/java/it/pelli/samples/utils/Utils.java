@@ -1,4 +1,4 @@
-package it.pelli.samples;
+package it.pelli.samples.utils;
 
 import java.io.File;
 import java.io.IOException;

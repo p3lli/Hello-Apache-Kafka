@@ -1,8 +1,10 @@
-package it.pelli.samples;
+package it.pelli.samples.producers;
 
 import com.google.common.io.Resources;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.Callback;
+import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.Arrays;
 import au.com.bytecode.opencsv.CSVReader;
+import it.pelli.samples.utils.Utils;
 
 public class Producer {
     public static void main(String[] args) throws IOException {
@@ -35,9 +38,10 @@ public class Producer {
                         ProducerRecord<String, String> data = 
                              new ProducerRecord<String, String>
                                  (topic, message);
-                        producer.send(data);
+                        ProducerCallback callback = new ProducerCallback(message);
+                        producer.send(data, callback);
                         producer.flush();
-                        System.out.printf("Sent message number %d: topic %s: %s\n", messageCount, topic, message);
+                        System.out.printf("Sending message number %d: topic %s: %s...\n", messageCount, topic, message);
                         messageCount++;
                     } else {
                         throw new IllegalStateException("Shouldn't be possible to get message on topic '" + topic + "'");
@@ -55,4 +59,30 @@ public class Producer {
             producer.close();
         }
     }
+
+    private static class ProducerCallback implements Callback {
+
+        private String message;
+
+        public ProducerCallback(String message) {
+	    this.message = message;
+        }
+
+        public String getMessage() {
+            return this.message;
+        }
+
+        @Override
+        public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+            if (e != null) {
+	        System.out.printf("Error while producing message to topic: %s\n", recordMetadata);
+                e.printStackTrace();
+            } else {
+                String message = String.format("Sent message: '%s' to topic: %s, partition: %s, offset: %s\n",
+                    getMessage(), recordMetadata.topic(), recordMetadata.partition(), recordMetadata.offset());
+                System.out.println(message);
+            }
+        }
+    }
+
 }

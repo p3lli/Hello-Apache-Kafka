@@ -42,7 +42,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>it.pelli.samples.Run</mainClass>
+                            <mainClass>it.pelli.samples.application.Run</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
