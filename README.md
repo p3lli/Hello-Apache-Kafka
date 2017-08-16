@@ -2,6 +2,7 @@
 
 This project contains my first attempt to use Apache Kafka framework.  
 I am currently using Kafka version 0.11.0.0.  
+For a rapid introduction to Kafka, I would suggest [Ashrith Mekala guide](https://gist.github.com/ashrithr/5811266).  
 
 ## What the code does
 Starting from the demo from [MapR github](https://github.com/mapr-demos/kafka-sample-programs), the project simply defines a custom  
@@ -38,8 +39,8 @@ From the scripts directory, run these commands in different terminals:
 ./get-kafka.sh
 ./run-zookeeper.sh
 ./run-kafka.sh
-./create-topic.sh seventy
-./create-topic.sh eighty
+./create-topic.sh seventy <NUM_PARTITIONS>
+./create-topic.sh eighty <NUM_PARTITIONS>
 ./start-producer.sh /absolute/path/to/dataset.csv
 ./start-consumer.sh
 ```

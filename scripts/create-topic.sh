@@ -4,7 +4,7 @@ cd ../kafka
 ## Create topics
 bin/kafka-topics.sh --create \
     --replication-factor 1 \
-    --partitions 6 \
+    --partitions $2\
     --topic $1 \
     --zookeeper  localhost:2181
 
