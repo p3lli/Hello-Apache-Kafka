@@ -45,3 +45,7 @@ From the scripts directory, run these commands in different terminals:
 ./start-producer.sh /absolute/path/to/dataset.csv
 ./start-consumer.sh
 ```
+To delete a topic run this command from kafka/bin:  
+```
+./kafka-topics.sh --zookeeper localhost:2181 --delete --topic <TOPIC>
+```
