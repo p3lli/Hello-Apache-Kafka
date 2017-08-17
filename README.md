@@ -34,17 +34,55 @@ mvn package
 ```
 to create the target directory which will contains the executable packages.  
 
-From the scripts directory, run these commands in different terminals:
+
+Then, move to the scripts directory and run:  
 ```
 ./get-kafka.sh http://it.apache.contactlab.it/kafka/VERSION/kafka_VERSION.tgz
+```
+to download and extract Kafka.  
+
+
+To start zookeeper, run:  
+```
 ./run-zookeeper.sh
+```
+
+To start the Kafka nodes, run:  
+```
+./run-kafka-server-N.sh
+```
+If you want to start 3 different Kafka nodes, open three terminals and run:  
+```
 ./run-kafka-server-1.sh
-(./run-kafka-server-2.sh)
+```
+```
+./run-kafka-server-2.sh
+```
+```
+./run-kafka-server-3.sh
+```
+
+Now, create topics 'seventy' and 'eighty':  
+```
 ./create-topic.sh seventy <NUM_PARTITIONS>
 ./create-topic.sh eighty <NUM_PARTITIONS>
+```
+Set the number of partitions greater than one if you want to experiment  
+some consumer balancing.  
+
+
+In a different terminal, start a producer by executing:  
+```
 ./start-producer.sh /absolute/path/to/dataset.csv
+```
+
+Finally, start as many consumer as your number of partitions can handle  
+by executing:  
+```
 ./start-consumer.sh <TOPICS>
 ```
+
+
 To delete a topic run this command from kafka/bin:  
 ```
 ./kafka-topics.sh --zookeeper localhost:2181 --delete --topic <TOPIC>
