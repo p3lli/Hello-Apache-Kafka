@@ -36,7 +36,7 @@ to create the target directory which will contains the executable packages.
 
 From the scripts directory, run these commands in different terminals:
 ```
-./get-kafka.sh
+./get-kafka.sh http://it.apache.contactlab.it/kafka/VERSION/kafka_VERSION.tgz
 ./run-zookeeper.sh
 ./run-kafka.sh config/server-1.properties
 (./run-kafka.sh config/server-2.properties)
