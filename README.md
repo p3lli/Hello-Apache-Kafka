@@ -87,3 +87,8 @@ To delete a topic run this command from kafka/bin:
 ```
 ./kafka-topics.sh --zookeeper localhost:2181 --delete --topic <TOPIC>
 ```
+
+## Example
+Try starting three different Kafka nodes, topic 'seventy' with replication  
+factor of 2, topic 'eighty' with replication factor of 2, one producer,  
+two consumers for topic 'seventy' and two consumers for topic 'eighty'.  
