@@ -13,6 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.Arrays;
 import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVParser;
 import it.pelli.samples.utils.Utils;
 
 public class Producer {
@@ -29,7 +30,9 @@ public class Producer {
 	if (args[1] != null) {
            try {
     	        CSVReader reader = new CSVReader(
-                    new FileReader(Utils.validateFilePath(args[1])));
+                    new FileReader(Utils.validateFilePath(args[1])), 
+                    CSVParser.DEFAULT_SEPARATOR, 
+                    CSVParser.DEFAULT_QUOTE_CHARACTER, 1);
                 String [] nextLine;
                 while ((nextLine = reader.readNext()) != null) {
                     String topic = nextLine[0];
