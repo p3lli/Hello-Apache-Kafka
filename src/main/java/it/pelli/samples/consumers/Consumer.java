@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
@@ -23,7 +24,20 @@ public class Consumer {
             }
             consumer = new KafkaConsumer<>(properties);
         }
-        consumer.subscribe(Arrays.asList(Utils.TOPICS));
+
+        ArrayList<String> topics = new ArrayList<String>();
+
+        if (args.length > 1) {
+            for (int i=1; i<args.length; i++) {
+                if (Arrays.asList(Utils.TOPICS).contains(args[i])) {
+                    topics.add(args[i]);
+                }
+            }
+        } else {
+            topics.addAll(Arrays.asList(Utils.TOPICS));
+        }
+
+        consumer.subscribe(topics);
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(200);
             for (ConsumerRecord<String, String> record : records) {

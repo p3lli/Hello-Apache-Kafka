@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 cd ..
-./target/kafka-samples consumer
+./target/kafka-samples consumer "$@"
