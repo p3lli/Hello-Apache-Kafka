@@ -43,7 +43,7 @@ From the scripts directory, run these commands in different terminals:
 ./create-topic.sh seventy <NUM_PARTITIONS>
 ./create-topic.sh eighty <NUM_PARTITIONS>
 ./start-producer.sh /absolute/path/to/dataset.csv
-./start-consumer.sh
+./start-consumer.sh <TOPICS>
 ```
 To delete a topic run this command from kafka/bin:  
 ```
