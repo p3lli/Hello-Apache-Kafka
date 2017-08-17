@@ -42,6 +42,7 @@ Then, move to the scripts directory and run:
 ./get-kafka.sh http://it.apache.contactlab.it/kafka/VERSION/kafka_VERSION.tgz
 ```
 to download and extract Kafka.  
+You can get the download url from [here](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz).   
 
 
 To start zookeeper, run:  
