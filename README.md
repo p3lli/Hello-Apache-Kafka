@@ -28,6 +28,8 @@ Following [Cloudurable tutorials](http://cloudurable.com/blog/kafka-tutorial/ind
 to start the project. I am not a guru bash programmer, so please  
 have a look to the scripts before running them.  
 
+At the end of the paragraph you can find the description of a working example.  
+
 First of all, run  
 ```
 mvn package
@@ -93,6 +95,7 @@ remove Zookeeper and Kafka directories.
 
 
 ## Example
-Try starting three different Kafka nodes, topic 'seventy' with replication  
-factor of 2, topic 'eighty' with replication factor of 2, one producer,  
-two consumers for topic 'seventy' and two consumers for topic 'eighty'.  
+Try starting three different Kafka nodes, a topic named 'seventy' with  
+replication factor of 2, a topic 'eighty' with replication factor of 2,  
+one producer, two consumers for topic 'seventy' and two consumers for  
+topic 'eighty'.  
