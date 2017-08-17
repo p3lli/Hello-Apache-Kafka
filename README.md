@@ -38,8 +38,8 @@ From the scripts directory, run these commands in different terminals:
 ```
 ./get-kafka.sh http://it.apache.contactlab.it/kafka/VERSION/kafka_VERSION.tgz
 ./run-zookeeper.sh
-./run-kafka.sh config/server-1.properties
-(./run-kafka.sh config/server-2.properties)
+./run-kafka-server-1.sh
+(./run-kafka-server-2.sh)
 ./create-topic.sh seventy <NUM_PARTITIONS>
 ./create-topic.sh eighty <NUM_PARTITIONS>
 ./start-producer.sh /absolute/path/to/dataset.csv
