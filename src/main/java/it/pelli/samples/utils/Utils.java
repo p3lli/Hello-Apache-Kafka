@@ -40,13 +40,13 @@ public class Utils {
         if (Arrays.asList(TOPICS).contains(topic)) {
              switch (operation) {
                  case "read":
-                     sqlStatement = "SELECT * FROM " + topic + " WHERE NAME = '" + content + "';";
+                     sqlStatement = "SELECT * FROM " + topic + " WHERE name = '" + content + "';";
                      break;
                  case "insert":
-                     sqlStatement = "INSERT INTO " + topic + " (NAME) VALUES ('" + content + "');";
+                     sqlStatement = "INSERT INTO " + topic + " (name) VALUES ('" + content + "');";
                      break;
                  case "delete":
-                     sqlStatement = "DELETE FROM " + topic + " WHERE NAME = '" + content + "';";
+                     sqlStatement = "DELETE FROM " + topic + " WHERE name = '" + content + "';";
                      break;
                  default:
                      throw new OperationException("'" + operation + "' is not a valid operation!");
